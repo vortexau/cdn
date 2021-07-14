@@ -8,6 +8,6 @@ jobs:
   build-cdn-list:
     runs-on: ubuntu-latest
     steps:
-    - name: execute py script # run the run.py to get the latest data
+      - name: execute py script # run the run.py to get the latest data
         run: |
           python build.py 
