@@ -14,3 +14,7 @@ jobs:
       - name: execute py script # run the run.py to get the latest data
         run: |
           python build.py 
+      - name: Check in results
+        uses: actions/upload-artifact@v2
+        with:
+          path: cdns.yaml
