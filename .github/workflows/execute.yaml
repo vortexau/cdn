@@ -14,8 +14,13 @@ jobs:
       - name: execute py script # run the run.py to get the latest data
         run: |
           python build.py 
-      - name: Check in results
-        uses: actions/upload-artifact@v2
-        with:
-          name: cdns.yaml
-          path: cdns.yaml
+      - name: Commit files # commit the output folder
+        run: |
+          git config --local user.email "test@github.com"
+          git config --local user.name "GitHub Action test"
+          git add cdns.yaml 
+          git commit -m "Add changes"
+    - name: Push changes
+      uses: ad-m/github-push-action@master
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
