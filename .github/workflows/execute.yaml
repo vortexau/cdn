@@ -17,4 +17,5 @@ jobs:
       - name: Check in results
         uses: actions/upload-artifact@v2
         with:
+          name: cdns.yaml
           path: cdns.yaml
