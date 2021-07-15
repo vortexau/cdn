@@ -8,6 +8,8 @@ jobs:
   build-cdn-list:
     runs-on: ubuntu-latest
     steps:
+      - name: checkout repo content
+        uses: actions/checkout@v2 
       - name: execute py script # run the run.py to get the latest data
         run: |
           python build.py 
